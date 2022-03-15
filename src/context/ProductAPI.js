@@ -24,6 +24,7 @@ export const DataProvider = ({children}) => {
         // console.log(items)
         // setCart(items);
         const item = [...products].find(item => item.id === id);
+        if(!item.stocks) { return }
         item.stocks--;
         setCart([...cart, item]);
     }
