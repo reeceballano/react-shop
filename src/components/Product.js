@@ -4,7 +4,7 @@ import DataContext from '../context/ProductAPI';
 const Product  = ({product}) => {
     const { id, name, price, stocks } = product;
 
-    const { cart, setCart, addToCart } = useContext(DataContext);
+    const { addToCart } = useContext(DataContext);
 
     const handleCartItem = () => {
         addToCart(id);
