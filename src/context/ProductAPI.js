@@ -32,13 +32,12 @@ export const DataProvider = ({children}) => {
             qty: 1    
         } 
 
-
         // CHECK IF STOCKS NOT ZERO
         if(!item.stocks ) { return }
 
         // DECREASE STOCK
         item.stocks--;
-                
+
         // CHECK IF ITEM IS EXIST IN CART ITEMS; IF EXIST, JUST UPDATE QTY
         if(checkItem(item.id)) {
             const updateItem = cart.find(i => i.id === item.id);
