@@ -32,9 +32,27 @@ export const DataProvider = ({children}) => {
             qty: 1    
         } 
 
+        // CHECK IF STOCKS NOT ZERO
         if(!item.stocks ) { return }
         
-        setCart([...cart, cartItem]);
+        // CHECK IF ITEM IS EXIST IN CART ITEMS
+        // IF EXIST, JUST UPDATE QTY
+        if(checkItem(item.id)) {
+            const updateItem = cart.find(i => i.id === item.id);
+            updateItem.qty++;
+            setCart([...cart], updateItem)
+        } else {
+            setCart([...cart, cartItem]);
+        }
+
+    }
+
+    const checkItem = (id) => {
+        const isExist = cart.find(item => item.id === id);
+
+        if(isExist) { return true; }
+
+        return false;
     }
 
     useEffect(() => {
