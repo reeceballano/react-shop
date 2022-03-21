@@ -3,11 +3,10 @@ import DataContext from '../context/ProductAPI';
 import Product from './Product';
 
 const Products = () => {
-    const { products, cart } = useContext(DataContext);
+    const { products } = useContext(DataContext);
 
     return(
         <>
-        {JSON.stringify(cart)}
         <div className="products">
             {
                 products.map(item =>
