@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import DataContext from "../context/ProductAPI";
+import CartItem from "../components/CartItem";
 
 const CartItems = () => {
     const { cart } = useContext(DataContext);
@@ -8,7 +9,7 @@ const CartItems = () => {
         <div className="cart-items">
             {
                 cart.map(c => {
-                    return JSON.stringify(c)
+                    return <CartItem item={c} />
                 })
             }
         </div>
