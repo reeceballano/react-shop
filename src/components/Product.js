@@ -12,7 +12,8 @@ const Product  = ({product}) => {
 
     return(
         <div className={`product-item ${!stocks ? 'out-of-stock' : ''}`}>
-            ID: {id} / NAME: {name} / PRICE: {price} / STOCKS: {stocks} <button onClick={handleCartItem}>Add cart</button>
+            ID: {id} / NAME: {name} / PRICE: {price} / STOCKS: {stocks} 
+            <button onClick={handleCartItem}>Add cart</button>
         </div>
     )
 }
