@@ -6,11 +6,15 @@ const CartItem = ({item}) => {
 
     }
 
+    const handleDecreaseItem = () => {
+        console.log('decrease cart item');
+    }
+
     return(
         <div className="cart-item">
             {id} - {name} {price} {qty}
             <button onClick={handleIncreaseItem}>+</button>
-            <button>-</button>
+            <button onClick={handleDecreaseItem}>-</button>
         </div>
     )
 }
