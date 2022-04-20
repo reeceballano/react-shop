@@ -1,3 +1,5 @@
+import Currency from "./Currency";
+
 const CartItem = ({item}) => {
     const { id, name, price, qty } = item;
     
@@ -12,7 +14,7 @@ const CartItem = ({item}) => {
 
     return(
         <div className="cart-item">
-            {id} - {name} {price} {qty}
+            {id} - {name} <Currency />{price} {qty}
             <button onClick={handleIncreaseItem}>+</button>
             <button onClick={handleDecreaseItem}>-</button>
         </div>
