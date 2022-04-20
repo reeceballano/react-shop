@@ -1,5 +1,6 @@
 import { useContext } from 'react';
 import DataContext from '../context/ProductAPI';
+import Currency from './Currency';
 
 const Product  = ({product}) => {
     const { id, name, price, stocks } = product;
@@ -12,7 +13,7 @@ const Product  = ({product}) => {
 
     return(
         <div className={`product-item ${!stocks ? 'out-of-stock' : ''}`}>
-            ID: {id} / NAME: {name} / PRICE: {price} / STOCKS: {stocks} 
+            ID: {id} / NAME: {name} / PRICE: <Currency />{price} / STOCKS: {stocks} 
             <button onClick={handleCartItem}>Add cart</button>
         </div>
     )
