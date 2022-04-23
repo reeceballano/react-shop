@@ -12,9 +12,14 @@ const CartItem = ({item}) => {
         console.log('decrease cart item');
     }
 
+    const total = () => {
+        const printTotal = price * qty;
+        return parseInt(printTotal);
+    }
+
     return(
         <div className="cart-item">
-            {id} - {name} <Currency />{price} {qty}
+            {id} - {name} <Currency />{price} {qty} | <Currency />{total()}
             <button onClick={handleIncreaseItem}>+</button>
             <button onClick={handleDecreaseItem}>-</button>
         </div>
