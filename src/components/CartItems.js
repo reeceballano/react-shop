@@ -6,13 +6,15 @@ const CartItems = () => {
     const { cart } = useContext(DataContext);
 
     return(
-        <div className="cart-items">
-            {
-                cart.map(c => {
-                    return <CartItem item={c} key={c.id}/>
-                })
-            }
-        </div>
+        <>
+            <div className="cart-items">
+                {
+                    cart.map(c => {
+                        return <CartItem item={c} key={c.id}/>
+                    })
+                }
+            </div>
+        </>
     )
 }
 
