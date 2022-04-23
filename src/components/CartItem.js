@@ -13,8 +13,7 @@ const CartItem = ({item}) => {
     }
 
     const total = () => {
-        const printTotal = price * qty;
-        return parseInt(printTotal);
+        return price * qty;
     }
 
     return(
