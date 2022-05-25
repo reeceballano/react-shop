@@ -19,6 +19,17 @@ export const DataProvider = ({children}) => {
         setProducts(data);
     }
 
+    const updateQty = (id) => {
+        id = 1;
+        const item = products.find(i => i.id === id);
+        
+        if(!item) { return }
+
+        const updateItem = { ...item, stocks: item.stocks-- }
+
+        console.log(updateItem);
+    }
+
     const addToCart = (id) => {
         // const items = [...cart, product]
         // console.log(items)
@@ -70,7 +81,8 @@ export const DataProvider = ({children}) => {
             products,
             cart,
             setCart,
-            addToCart
+            addToCart,
+            updateQty
         }}>
             {children}
         </DataContext.Provider>
