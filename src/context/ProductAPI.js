@@ -7,16 +7,19 @@ export const DataProvider = ({children}) => {
 
     const [cart, setCart] = useState([]);
 
-    const fetchProducts = () => {
-        const data = [
-            { id: 1, name: 'Rebisco', price: 3, stocks: 10, },
-            { id: 2, name: 'Biko', price: 4, stocks: 5 },
-            { id: 3, name: 'Kanin', price: 5, stocks: 3 },
-            { id: 4, name: 'Dinengdeng', price: 5, stocks: 3 },
-            { id: 5, name: 'Papaitan', price: 5, stocks: 6 },
-        ]
+    const fetchProducts = async () => {
+        // const data = [
+        //     { id: 1, name: 'Rebisco', price: 3, stocks: 10, },
+        //     { id: 2, name: 'Biko', price: 4, stocks: 5 },
+        //     { id: 3, name: 'Kanin', price: 5, stocks: 3 },
+        //     { id: 4, name: 'Dinengdeng', price: 5, stocks: 3 },
+        //     { id: 5, name: 'Papaitan', price: 5, stocks: 6 },
+        // ]
 
-        setProducts(data);
+        const res = await fetch(`https://fakestoreapi.com/products`);
+        const data = await res.json();
+        const newData = data.map(item => ({...item, stocks: 5}))
+        setProducts(newData);
     }
 
     const updateQty = (id) => {
