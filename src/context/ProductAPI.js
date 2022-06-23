@@ -91,6 +91,7 @@ export const DataProvider = ({children}) => {
     return(
         <DataContext.Provider value={{
             products,
+            setProducts,
             cart,
             setCart,
             addToCart,
