@@ -18,11 +18,16 @@ export const DataProvider = ({children}) => {
 
         const res = await fetch(`https://fakestoreapi.com/products`);
         const data = await res.json();
-        const newData = data.map(item => ({...item, stocks: 5}));
+        const randomStocks = () => { return Math.floor(Math.random() * 100) };
+        const newData = data.map(item => (
+            {...item, stocks: randomStocks() }
+        ));
+
         for(let element of newData) {
             element.name = element.title;
             delete element.title;
         }
+
         setProducts(newData);
     }
 
