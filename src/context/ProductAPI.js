@@ -69,7 +69,6 @@ export const DataProvider = ({children}) => {
         } else {
             setCart([...cart, cartItem]);
         }
-
     }
 
     const checkItem = (id) => {
